@@ -104,7 +104,7 @@ func WriteFileCsv(employee []propertyRespons, resultFileName string) error {
 
 	dataWriter := bufio.NewWriter(file)
 	for _, h := range employee {
-		s := fmt.Sprintf("%s,\n", h.propertynameRespons)
+		s := fmt.Sprintf("%s,%v\n", h.propertynameRespons,h.averageWeight)
 		_, err = dataWriter.WriteString(s)
 		if err != nil {
 			return err
